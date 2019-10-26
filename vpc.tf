@@ -3,7 +3,7 @@ resource "aws_vpc" "environmentVPC" {
 
 
   tags = {
-      Name = "${var.Name}"
+      Name: "environmentVPC"
       Env = "${var.Env}"
       Created_by = "${var.Created_by}"
       Dept = "${var.Dept}"
