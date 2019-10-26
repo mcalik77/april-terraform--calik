@@ -3,7 +3,6 @@ resource "aws_subnet" "appSubnet1" {
   cidr_block = "10.17.34.1/28"
 
   tags = {
-      Name: "publicSubnet"
       Env = "${var.Env}"
       Created_by = "${var.Created_by}"
       Dept = "${var.Dept}"
@@ -15,7 +14,6 @@ resource "aws_subnet" "appSubnet2" {
   cidr_block = "10.17.34.2/28"
 
   tags = {
-      Name = "${var.Name}.private"
       Env = "${var.Env}"
       Created_by = "${var.Created_by}"
       Dept = "${var.Dept}"
