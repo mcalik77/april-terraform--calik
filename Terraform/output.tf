@@ -1,12 +1,12 @@
 output "VPC" {
-  value = "${aws_vpc.dev.id}"
+  value = "${aws_vpc.environmentVPC.id}"
 }
-output "Public_subnet" {
-  value = "${aws_subnet.public.id}"
+output "Public Subnet" {
+  value = "${aws_subnet.appSubnet1.id}"
 }
 
 output "Private_subnet" {
-  value = "${aws_subnet.private.id}"
+  value = "${aws_subnet.appSubnet2.id}"
 }
 
 output "pub_sec_group" {
