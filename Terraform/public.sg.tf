@@ -38,7 +38,7 @@ tags = {
 }
 resource "aws_security_group" "privateDB" {
   name        = "privateDB"
-  description = "Allow mysql traffic"
+  description = "Allow posgress traffic"
   vpc_id      = "${aws_vpc.environmentVPC.id}"
 
   ingress {
