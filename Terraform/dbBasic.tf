@@ -11,5 +11,6 @@ resource "aws_db_instance" "appDB" {
   username                 = "dbUser"
   password                 = "password"
   port                     = 5432
+  region                   = "us-west-2"
 
 }
