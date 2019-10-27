@@ -1,5 +1,6 @@
 resource "aws_db_instance" "appDB" {
   
+  subnet_id                = "${aws_subnet.appSubnet2.id}"
   vpc_security_group_ids   = ["${aws_security_group.privateDB.id}"]
   allocated_storage        = 20
   storage_type             = "gp2"
