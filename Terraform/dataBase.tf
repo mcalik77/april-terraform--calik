@@ -2,9 +2,6 @@ provider "aws" {
   region = "us-west-1"
 }
 
-##############################################################
-# Data sources to get VPC, subnets and security group details
-##############################################################
 data "aws_vpc" "default" {
   default = true
 }
@@ -18,9 +15,6 @@ data "aws_security_group" "default" {
   name   = "default"
 }
 
-#####
-# DB
-#####
 module "db" {
   source = "../../"
 
@@ -34,10 +28,6 @@ module "db" {
 
   # kms_key_id        = "arm:aws:kms:<region>:<account id>:key/<kms key id>"
   name = "demodb"
-
-  # NOTE: Do NOT use 'user' as the value for 'username' as it throws:
-  # "Error creating DB Instance: InvalidParameterValue: MasterUsername
-  # user cannot be used as it is a reserved word used by the engine"
   username = "demouser"
 
   password = "YourPwdShouldBeLongAndSecure!"
