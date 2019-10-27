@@ -6,11 +6,11 @@ resource "aws_db_instance" "appDB" {
   engine                   = "postgres"
   engine_version           = "9.5.4"
   instance_class           = "db.t2.micro"
-  identifier               = "appDB"
+  identifier               = "appdb"
   name                     = "mydb"
   username                 = "dbUser"
   password                 = "password"
   port                     = 5432
-  region                   = "us-west-2"
+  #region                   = "us-west-2"
 
 }
