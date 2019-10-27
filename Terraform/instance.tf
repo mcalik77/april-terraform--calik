@@ -1,5 +1,5 @@
 resource "aws_instance" "webServer" {
-    ami = "ami-8bb9e2f2"
+    ami = "ami-08d489468314a58df"
     instance_type = "t2.micro"
     #key_name = "${aws_key_pair.terraform_april.key_name}"
     security_groups = ["${aws_security_group.public.name}"]
@@ -13,7 +13,7 @@ resource "aws_instance" "webServer" {
 }
 
 resource "aws_instance" "appServer" {
-    ami = "ami-8bb9e2f2"
+    ami = "ami-08d489468314a58df"
     instance_type = "t2.micro"
     #If you create a keypair and you assign to instance if you want to 
     #key_name = "${aws_key_pair.terraform_april.key_name}"
