@@ -14,3 +14,4 @@
     - python3-pip
     - docker-engine
     - git
+    - curl
