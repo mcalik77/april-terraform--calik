@@ -3,7 +3,7 @@ resource "aws_instance" "webServer" {
     instance_type = "t2.micro"
     key_name = "${var.key_name}"
     subnet_id = "${aws_subnet.appSubnet1.id}"
-    security_groups = ["${aws_security_group.public.id}"]
+    security_groups = ["${aws_security_group.public.name}"]
     user_data = "${file("userdata-webServer.sh")}"
 
     tags = {
@@ -19,7 +19,7 @@ resource "aws_instance" "appServer" {
     #If you create a keypair and you assign to instance if you want to 
     key_name = "${var.key_name}"
     subnet_id = "${aws_subnet.appSubnet2.id}"
-    security_groups = ["${aws_security_group.public.id}"]
+    security_groups = ["${aws_security_group.public.name}"]
     user_data = "${file("userdata-appServer.sh")}"
 
     tags = {
