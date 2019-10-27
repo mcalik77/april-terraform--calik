@@ -1,2 +1,2 @@
-#!/bin//bash
-sudo /usr/local/bin/ansible/local/mycompany/appServer-provisioner.yml
+#!/bin/bash
+/usr/local/bin/ansible  /local/mycompany/appServer-provisioner.yml

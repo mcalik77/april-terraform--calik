@@ -1,5 +1,22 @@
 ---
 host: localhost
+tasks:
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+- name: Install following packages
+  yum:
+    name: "{{ packages }}"
+    vars:
+      packages:
+        - tomcat
+        - python3
+        - python3-pip
+        - docker-engine
+        - git
+        - curl
+
 
 tasks:
     - name: Get the current region availability
