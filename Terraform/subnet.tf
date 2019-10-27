@@ -1,6 +1,6 @@
 resource "aws_subnet" "appSubnet1" {
   vpc_id     = "${aws_vpc.environmentVPC.id}"
-  cidr_block = "10.17.34.1/28"
+  cidr_block = "10.17.34.0/25"
   availability_zone = "us-west-2a"
 
   tags = {
@@ -12,7 +12,7 @@ resource "aws_subnet" "appSubnet1" {
 
 resource "aws_subnet" "appSubnet2" {
   vpc_id     = "${aws_vpc.environmentVPC.id}"
-  cidr_block = "10.17.34.2/28"
+  cidr_block = "10.17.34.128/25"
   availability_zone = "us-west-2b"
   tags = {
       Env = "${var.Env}"
