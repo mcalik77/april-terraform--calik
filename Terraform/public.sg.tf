@@ -1,7 +1,7 @@
 resource "aws_security_group" "public" {
   name        = "public"
   description = "Allow inbound traffic"
-  vpc_id      = "${aws_vpc.dev.id}"
+  vpc_id      = "${aws_vpc.environmentVPC.id}"
 
   ingress {
     from_port   = 443
@@ -39,11 +39,11 @@ tags = {
 resource "aws_security_group" "privateDB" {
   name        = "privateDB"
   description = "Allow mysql traffic"
-  vpc_id      = "${aws_vpc.dev.id}"
+  vpc_id      = "${aws_vpc.environmentVPC.id}"
 
   ingress {
-    from_port   = 3306
-    to_port     = 3306
+    from_port   = 5432
+    to_port     = 5432
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }

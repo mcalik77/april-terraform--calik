@@ -1,5 +1,5 @@
 resource "aws_subnet" "appSubnet1" {
-  vpc_id     = "${aws_vpc.dev.id}"
+  vpc_id     = "${aws_vpc.environmentVPC.id}"
   cidr_block = "10.17.34.1/28"
 
   tags = {
@@ -10,7 +10,7 @@ resource "aws_subnet" "appSubnet1" {
 }
 
 resource "aws_subnet" "appSubnet2" {
-  vpc_id     = "${aws_vpc.dev.id}"
+  vpc_id     = "${aws_vpc.environmentVPC.id}"
   cidr_block = "10.17.34.2/28"
 
   tags = {
