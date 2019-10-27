@@ -63,7 +63,7 @@ resource "aws_security_group" "privateDB" {
     cidr_blocks     = ["0.0.0.0/0"]
 }
 tags = {
-      Name = "${var.Name}.privateDB"
+      #Name = "${var.Name}.privateDB"
       Env = "${var.Env}"
       Created_by = "${var.Created_by}"
       Dept = "${var.Dept}"
