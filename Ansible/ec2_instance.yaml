@@ -17,7 +17,6 @@ tasks:
         - git
         - curl
 
-
 tasks:
     - name: Get the current region availability
       shell: curl http://169.254.169.254/latest/meta-data/placement/availability-zone
