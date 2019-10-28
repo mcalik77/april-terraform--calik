@@ -27,12 +27,12 @@ tasks:
   # item: "{{ ec2_facts | json_query('instances[].placement[].availability_zone') }}"
 
   - name: Get the current region availability
-    shell: curl http://169.254.169.254/latest/meta-data/placement/availability-zone
+    shell: 
   
   - name: Set the proxy  
     environment:
       http_proxy: https://usproxy-server.mycompany.aws:8443  
-  
+    when: http://169.254.169.254/latest/meta-data/placement/availability-zone == 'us-west-2a'
   - name: Copy of the local remote file
     copy:
       src: /mycompany-services.tar.gz
