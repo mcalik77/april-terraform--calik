@@ -21,26 +21,24 @@ tasks:
           - git
           - curl
 
-  - name: Set the proxy
-    environment:
-      http_proxy: https://usproxy-server.mycompany.aws:8443
-    when: http://169.254.169.254/latest/meta-data/placement/availability-zone == 'us-west-2a' or http://169.254.169.254/latest/meta-data/placement/availability-zone == 'us-west-2b'
+  - name: take metadata from the instance
+    shell: http://169.254.169.254/latest/meta-data/placement/availability_zone.
 
-  - name: Copy of the local remote file
-    copy:
-      src: /mycompany-services.tar.gz
-      dest: /tmp
-
-  - name: Extract mycompany-services.tar.gz into /data
-    unarchive:
-      src: /tmp
-      dest: /data
-
-  - name: Start service docker and tomcat, if not started
-    service:
-      name: docker
-      state: started
-
-    service:
-      name: tomcat
-      state: started
+  # - name: Copy of the local remote file
+  #   copy:
+  #     src: /mycompany-services.tar.gz
+  #     dest: /tmp
+  # 
+  # - name: Extract mycompany-services.tar.gz into /data
+  #   unarchive:
+  #     src: /tmp
+  #     dest: /data
+  #
+  # - name: Start service docker and tomcat, if not started
+  #   service:
+  #     name: docker
+  #     state: started
+  #
+  #   service:
+  #     name: tomcat
+  #     state: started
