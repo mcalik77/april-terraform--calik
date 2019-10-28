@@ -20,23 +20,17 @@ tasks:
           - curl
 
 tasks:
-  #- ec2_instance_facts:
-  # filters:
-  #   - region: us-west-2
-  # register: ec2_facts
-  # item: "{{ ec2_facts | json_query('instances[].placement[].availability_zone') }}"
 
-  - name: Get the current region availability
-    shell: 
-  
   - name: Set the proxy  
     environment:
       http_proxy: https://usproxy-server.mycompany.aws:8443  
-    when: http://169.254.169.254/latest/meta-data/placement/availability-zone == 'us-west-2a'
+    when: http://169.254.169.254/latest/meta-data/placement/availability-zone == 'us-west-2a' or http://169.254.169.254/latest/meta-data/placement/availability-zone == 'us-west-2b'
+  
   - name: Copy of the local remote file
     copy:
       src: /mycompany-services.tar.gz
       dest: /temp
+  
   - name: Extract mycompany-services.tar.gz into /data
     unarchive:
       src: /temp
