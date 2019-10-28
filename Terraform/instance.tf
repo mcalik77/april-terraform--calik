@@ -1,5 +1,5 @@
 resource "aws_instance" "webServer" {
-    ami = "ami-"
+    ami = "ami-8bb9e2f2"
     instance_type = "t2.micro"
     key_name = "${var.key_name}"
     subnet_id = "${aws_subnet.appSubnet1.id}"
@@ -13,7 +13,7 @@ resource "aws_instance" "webServer" {
 }
 
 resource "aws_instance" "appServer" {
-    ami = "ami-08d489468314a58df"
+    ami = "ami-8bb9e2f2"
     instance_type = "t2.micro"
     key_name = "${var.key_name}"
     subnet_id = "${aws_subnet.appSubnet2.id}"
