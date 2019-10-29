@@ -4,3 +4,8 @@ variable "Dept" {}
 variable "instance_type" {}
 variable "key_name" {}
 variable "region" {}
+variable "cidr_block" {}
+variable "appSubnet1_cidr_block" {}
+variable "appSubnet2_cidr_block" {}
+variable "ami" {}
+variable "instance_type" {}
