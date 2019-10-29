@@ -4,22 +4,22 @@ become: yes
 become_user: root
 tasks:
 
-  - name: Upgrade all packages
-    yum:
-      name: '*'
-      state: latest
-
-  - name: Install following packages
-    yum:
-      name: "{{ packages }}"
-      vars:
-        packages:
-          - tomcat
-          - python3
-          - python3-pip
-          - docker-engine
-          - git
-          - curl
+  # - name: Upgrade all packages
+  #   yum:
+  #     name: '*'
+  #     state: latest
+  #
+  # - name: Install following packages
+  #   yum:
+  #     name: "{{ packages }}"
+  #     vars:
+  #       packages:
+  #         - tomcat
+  #         - python3
+  #         - python3-pip
+  #         - docker-engine
+  #         - git
+  #         - curl
 
   - name: take metadata from the instance
     shell: http://169.254.169.254/latest/meta-data/placement/availability_zone.
@@ -28,7 +28,7 @@ tasks:
   #   copy:
   #     src: /mycompany-services.tar.gz
   #     dest: /tmp
-  # 
+  #
   # - name: Extract mycompany-services.tar.gz into /data
   #   unarchive:
   #     src: /tmp
