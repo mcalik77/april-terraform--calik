@@ -11,11 +11,11 @@ resource "aws_security_group" "public" {
   }
 
   ingress {
-    from_port       = 22
-    to_port         = 22
-    protocol        = "tcp"
-    cidr_blocks     = ["0.0.0.0/0"]
-    
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+
   }
   ingress {
     from_port   = 80
@@ -24,15 +24,15 @@ resource "aws_security_group" "public" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
-    from_port       = 0
-    to_port         = 0
-    protocol        = "-1"
-    cidr_blocks     = ["0.0.0.0/0"]
-}
-tags = {
-      #Name = "${var.Name}.public"
-      Env = "${var.Env}"
-      Created_by = "${var.Created_by}"
-      Dept = "${var.Dept}"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    #Name = "${var.Name}.public"
+    Env        = "${var.Env}"
+    Created_by = "${var.Created_by}"
+    Dept       = "${var.Dept}"
   }
 }
